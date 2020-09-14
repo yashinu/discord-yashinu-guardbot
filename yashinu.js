@@ -8,6 +8,7 @@ client.on("ready", async () => {
   let botVoiceChannel = client.channels.cache.get(ayarlar.botVoiceChannelID);
   if (botVoiceChannel) botVoiceChannel.join().catch(err => console.error("Bot ses kanalına bağlanamadı!"));
 });
+// Yashinu tarafından kodlanmıştır.
 
 client.on("message", async message => {
   if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(ayarlar.botPrefix)) return;
