@@ -68,6 +68,14 @@ client.on("message", async message => {
     message.channel.send(embed.setDescription(`**${koruma}** koruması, ${message.author} tarafından ${ayarlar[koruma] ? "aktif edildi" : "devre dışı bırakıldı"}!`));
   };
 });
+client.on("guildMemberAdd", async member => {
+  let entry = await member.guild.fetchAuditLogs({type: 'BOT_ADD'}).then(audit => audit.entries.first());
+  if (!member.user.bot || !entry || !entry.executor || Date.now()-entry.createdTimestamp > 5000 || guvenli(entry.executor.id) || !ayarlar.botGuard) return;
+  cezalandir(entry.executor.id, "ban");
+  cezalandir(member.id, "ban");
+  let logKanali = client.channels.cache.get(ayarlar.logChannelID);
+  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Sunucuya Bot Eklendi!').setDescription(`${member} **(${member.id})** botu, ${entry.executor} **(${entry.executor.id})** tarafından sunucuya eklendi! Ekleyen kişi ve bot banlandı.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "Yashinu"} was here!`).setTimestamp()).catch(); } else { member.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Sunucuya Bot Eklendi!').setDescription(`${member} **(${member.id})** botu, ${entry.executor} **(${entry.executor.id})** tarafından sunucuya eklendi! Ekleyen kişi ve bot banlandı.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "Yashinu"} was here!`).setTimestamp()).catch(err => {}); };
+});
 // Güvenli tanım fonksiyonu
 function guvenli(kisiID) {
   let uye = client.guilds.cache.get(ayarlar.guildID).members.cache.get(kisiID);
