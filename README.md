@@ -1,29 +1,9 @@
-# discord-stats-bot
-A bot that lets you to view activity of users with ranking.
+## Selam dostlarım, bir iki ay önce kullandığım sunucuya özel botlarımı açık kaynak olarak herkese açık bir şekilde paylaşmaya karar verdim. Kullanımıyla alakalı ve diğer şeylerle ilgili destek/yardım almak için aşağıya bırakacağım topluluk sunucumuzdan yardım alabilirsiniz.
 
-## Installation
-* Download the project.
-* Extract the files to a folder.
-* Copy the path of that directory.
-* Run cmd, type `cd path/you/copied` and then `npm i`.
+#Yashinu#0001
 
-> After the installation, go into the `Settings` folder and then open the `Settings.json` file.
-
-{
-    "Token": "",
-    "Prefix": "!",
-    "Private_Server": true
-}
-
-Fill the `Token` part.
-
-# 🎉 Ta da! Your bot is ready to go! 🎉
-
-> Footnote: Bot's database is based on a `JSON` file. If your machine/computer/server doesn't have read/create/wrtie permissions, then the database will be invalid.
-
-
-# discord.gg/serendia
-
-### Features that's included in bot does depend on the version. We'll add new features and statistics in future.
-
-# Discord: Alosha#0777
+ Projenin ücretli satılması veya başkası tarafından, başka bir ad ile dağıtılması kesinlikle yasaktır. Proje lisanslı bir projedir, bu tarz işlemlerde bulunanlar olur ise lisans aracılığı ile gerekli yasal yollara başvurulacaktır.
+<p align="center">
+  <a href="https://discord.gg/ZBmhQ2T"><img src="https://img.shields.io/badge/Serendia%20Squad%20-1d202b.svg?&style=for-the-badge&logo=discord&logoColor=white"></a>
+  <a href="https://discord.com/users/460813657811582986"><img src="https://img.shields.io/badge/Yashinu%20-7289DA.svg?&style=for-the-badge&logo=discord&logoColor=white"></a>
+</p>
